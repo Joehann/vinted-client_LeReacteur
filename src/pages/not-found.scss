@@ -1,0 +1,22 @@
+.not-found {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  h1 {
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #09b1ba;
+  }
+  button {
+    height: 30px;
+    width: 115px;
+    border: 1px solid #2cb1ba;
+    border-radius: 5px;
+    font-size: 12px;
+    outline: none;
+    background: #fff;
+    color: #2cb1ba;
+  }
+}

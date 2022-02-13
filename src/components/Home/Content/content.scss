@@ -1,0 +1,10 @@
+.content {
+  padding: 40px;
+  box-sizing: border-box;
+
+  .offers {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px auto auto;
+  }
+}

@@ -1,0 +1,46 @@
+/* Other rules */
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap");
+
+body {
+  // font-family: "Lato", sans-serif;
+  font-family: "Oswald", sans-serif;
+  background: #ebedee;
+}
+
+.container {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+  color: #111111;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.pointer,
+button {
+  cursor: pointer;
+}
+
+.bg-white {
+  background: #fff;
+}
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}

@@ -1,0 +1,11 @@
+.product-images {
+  // max-width: 30vw;
+  // height: 70vh;
+  // overflow: hidden;
+
+  img {
+    height: 600px;
+    width: 465px;
+    object-fit: cover;
+  }
+}

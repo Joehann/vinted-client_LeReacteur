@@ -1,0 +1,79 @@
+header {
+  border-bottom: 1px solid #cfcfcf;
+  padding: 20px;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  .container {
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+
+    .brand img {
+      width: 104px;
+    }
+
+    .header-search {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      input {
+        width: 590px;
+        padding-left: 40px;
+        background-color: #f5f6f7;
+        border-radius: 5px;
+        height: 37px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+
+        &::placeholder {
+          color: #bbb;
+        }
+      }
+
+      img {
+        position: absolute;
+        left: 7px;
+        top: 12px;
+        color: #bbb;
+        height: 16px;
+        width: 16px;
+      }
+    }
+    .buttons button {
+      height: 30px;
+      width: 115px;
+      border: 1px solid #2cb1ba;
+      border-radius: 5px;
+      font-size: 12px;
+      outline: none;
+      background: #fff;
+      color: #2cb1ba;
+    }
+    .sign-up-btn {
+      margin-right: 20px;
+    }
+
+    .logout-btn {
+      background: #c2185b;
+    }
+
+    .sold-btn {
+      height: 30px;
+      width: 115px;
+      border: 1px solid #2cb1ba;
+      border-radius: 5px;
+      font-size: 12px;
+      outline: none;
+      background: #2cb1ba;
+      color: #fff;
+    }
+  }
+}
