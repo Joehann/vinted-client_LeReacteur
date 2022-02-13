@@ -1,18 +1,16 @@
 import "./paginate.scss";
 const Paginate = ({ data, setPageNumber, limit, pageNumber }) => {
-  console.log(pageNumber);
+  //Calculate the number of pages based on the limit
   let numberOfPages = Math.floor(data.count / limit);
-  // console.log(numberOfPages);
   data.count % limit > 0 && numberOfPages++;
-  // console.log(numberOfPages);
+  //Create an array of each pages
   const pages = [];
   for (let i = 1; i <= numberOfPages; i++) {
     pages.push(i);
   }
-  // console.log(pages);
 
+  //Set the page number in the state
   const handleClick = (index) => {
-    // console.log(index + 1);
     setPageNumber(index + 1);
   };
   return (
@@ -21,6 +19,7 @@ const Paginate = ({ data, setPageNumber, limit, pageNumber }) => {
         return (
           <div
             key={index}
+            //Add the class "active" on the current page number
             className={index + 1 === pageNumber ? "active" : ""}
             onClick={() => {
               handleClick(index);

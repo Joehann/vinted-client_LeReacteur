@@ -8,9 +8,7 @@ const Switch = ({ setSort, sort, label }) => {
     }
   };
   return (
-    // <div class="toggle-button-cover">
-    //   <div class="button-cover">
-
+    // Switch button for sort the results of the items research
     <label htmlFor="switch">
       {label}
       <div className="button r" id="button-4">
@@ -24,8 +22,6 @@ const Switch = ({ setSort, sort, label }) => {
         <div className="layer"></div>
       </div>
     </label>
-    //   </div>
-    // </div>
   );
 };
 

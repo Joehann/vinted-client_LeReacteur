@@ -19,6 +19,7 @@ const Login = ({ setToken, setToggleModal }) => {
 
   const navigate = useNavigate();
 
+  //On submit try to login the user and if it's right, set the token as a cookie and navigate to ('/')
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -31,9 +32,7 @@ const Login = ({ setToken, setToggleModal }) => {
         "https://lereacteur-vinted-api.herokuapp.com/user/login",
         userInfos
       );
-      //   console.log(response);
       const token = response.data.token;
-      //   console.log(token);
       setUserToken(navigate, token, setToken);
       setToggleModal("hidden");
     } catch (error) {

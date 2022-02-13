@@ -6,9 +6,10 @@ import { fetchData } from "../functions/fetchData";
 const Home = ({ search, sort }) => {
   const [data, setData] = useState([]);
   const [isLoading, setisLoading] = useState(true);
-  const [pageNumber, setPageNumber] = useState(1);
-  const limit = 5;
+  const [pageNumber, setPageNumber] = useState(1); //state of the current pageNumber
+  const limit = 10; //limits the number of items to display per page
 
+  // This functions imported from the folder "functions"
   useEffect(() => {
     fetchData(
       `https://lereacteur-vinted-api.herokuapp.com/offers?title=${search}&sort=${sort}&page=${pageNumber}&limit=${limit}`,
@@ -17,6 +18,7 @@ const Home = ({ search, sort }) => {
     );
   }, [search, sort, pageNumber]);
 
+  // Until the data arrives, display the loader
   return isLoading ? (
     <Loader />
   ) : (

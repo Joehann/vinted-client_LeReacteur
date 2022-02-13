@@ -9,6 +9,7 @@ const Offer = () => {
   const [data, setData] = useState([]);
   const [isLoading, setisLoading] = useState(true);
 
+  // This functions imported from the folder "functions"
   useEffect(() => {
     fetchData(
       `https://lereacteur-vinted-api.herokuapp.com/offer/${id}`,
@@ -17,6 +18,7 @@ const Offer = () => {
     );
   }, [id]);
 
+  // Until the data arrives, display the loader
   return isLoading ? (
     <Loader />
   ) : (

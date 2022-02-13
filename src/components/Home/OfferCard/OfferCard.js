@@ -1,11 +1,6 @@
 import "./offer-card.scss";
 import { Link } from "react-router-dom";
 
-/**
- *
- * @param {offer: Object}
- * @returns {React.ElementType}
- */
 const OffersCard = ({ offer }) => {
   // console.log(offer);
   return (

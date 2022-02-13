@@ -15,6 +15,7 @@ const Header = ({ token, setToken, setSearch, search, setSort, sort }) => {
 
   return (
     <header>
+      {/* Modal for login and signup */}
       <Modal
         toggleModal={toggleModal}
         setToggleModal={setToggleModal}

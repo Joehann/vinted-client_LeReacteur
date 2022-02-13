@@ -1,20 +1,22 @@
 import "./detail.scss";
 
 const ProductDetails = ({ data }) => {
-  // console.log(data.product_details);
   return (
     <div className="offer-product-details">
       <p className="product-price">{data.product_price} €</p>
       <div className="product-list">
-        {data.product_details.map((item, index) => {
-          const keys = Object.keys(item);
-          return (
-            <div key={index} className="list-item">
-              <span className="left">{keys[0]}</span>
-              <span className="right">{item[keys[0]]}</span>
-            </div>
-          );
-        })}
+        {
+          //Allows dynamic detail display with a value only
+          data.product_details.map((item, index) => {
+            const keys = Object.keys(item);
+            return (
+              <div key={index} className="list-item">
+                <span className="left">{keys[0]}</span>
+                <span className="right">{item[keys[0]]}</span>
+              </div>
+            );
+          })
+        }
       </div>
       <div className="divider"></div>
       <div className="offer-product-content">

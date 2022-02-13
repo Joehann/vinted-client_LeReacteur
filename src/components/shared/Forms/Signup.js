@@ -23,6 +23,7 @@ const Signup = ({ setToken, setToggleModal }) => {
   });
   const navigate = useNavigate();
 
+  //Try to signup the user. If it's right, set the token in cookie and navigate to ('/')
   const handleSubmit = async (event) => {
     event.preventDefault();
 
