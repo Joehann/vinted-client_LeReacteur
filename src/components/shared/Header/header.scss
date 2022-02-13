@@ -16,35 +16,40 @@ header {
     .brand img {
       width: 104px;
     }
-
-    .header-search {
-      position: relative;
+    .filters {
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
+      gap: 10px;
 
-      input {
-        width: 590px;
-        padding-left: 40px;
-        background-color: #f5f6f7;
-        border-radius: 5px;
-        height: 37px;
-        border: none;
-        outline: none;
-        font-size: 16px;
+      .header-search {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
 
-        &::placeholder {
-          color: #bbb;
+        input {
+          width: 590px;
+          padding-left: 40px;
+          background-color: #f5f6f7;
+          border-radius: 5px;
+          height: 37px;
+          border: none;
+          outline: none;
+          font-size: 16px;
+
+          &::placeholder {
+            color: #bbb;
+          }
         }
-      }
 
-      img {
-        position: absolute;
-        left: 7px;
-        top: 12px;
-        color: #bbb;
-        height: 16px;
-        width: 16px;
+        img {
+          position: absolute;
+          left: 7px;
+          top: 12px;
+          color: #bbb;
+          height: 16px;
+          width: 16px;
+        }
       }
     }
     .buttons button {

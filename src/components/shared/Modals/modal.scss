@@ -1,13 +1,13 @@
-.hidden {
-  display: none;
-}
-
-.show {
-  display: block;
-}
-
 .modal {
   position: relative;
+
+  &.hidden {
+    display: none;
+  }
+
+  &.show {
+    display: block;
+  }
 
   .overlay {
     position: fixed;

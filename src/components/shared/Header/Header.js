@@ -5,8 +5,10 @@ import Modal from "../Modals/Modal";
 import { useState } from "react";
 import SearchInput from "./SearchInput";
 import { removeToken } from "../../../functions/userToken";
+import Switch from "./Switch";
+// import Range from "./Range";
 
-const Header = ({ token, setToken, setSearch, search }) => {
+const Header = ({ token, setToken, setSearch, search, setSort, sort }) => {
   const navigate = useNavigate();
   const [toggleModal, setToggleModal] = useState("hidden");
   const [modalName, setModalName] = useState("");
@@ -28,7 +30,8 @@ const Header = ({ token, setToken, setSearch, search }) => {
         </Link>
         <div className="filters">
           <SearchInput search={search} setSearch={setSearch} />
-          <input type="range" min="0" max="1000" />
+          <Switch sort={sort} setSort={setSort} label="Trier par prix :" />
+          {/* <Range /> */}
         </div>
 
         {token ? (
