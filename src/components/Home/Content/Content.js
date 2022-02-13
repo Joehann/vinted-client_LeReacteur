@@ -1,8 +1,10 @@
 import "./content.scss";
 import OfferCard from "../OfferCard/OfferCard";
+import Paginate from "../paginate/Paginate";
 
-const HomeContent = ({ data }) => {
+const HomeContent = ({ data, setPageNumber, limit, pageNumber }) => {
   // console.log(offers);
+  console.log(pageNumber);
   return (
     <div className="content">
       <div className="container">
@@ -12,6 +14,12 @@ const HomeContent = ({ data }) => {
             return <OfferCard key={index} offer={offer} />;
           })}
         </div>
+        <Paginate
+          data={data}
+          setPageNumber={setPageNumber}
+          limit={limit}
+          pageNumber={pageNumber}
+        />
       </div>
     </div>
   );

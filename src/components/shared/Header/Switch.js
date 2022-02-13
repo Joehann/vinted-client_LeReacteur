@@ -13,15 +13,15 @@ const Switch = ({ setSort, sort, label }) => {
 
     <label htmlFor="switch">
       {label}
-      <div class="button r" id="button-4">
+      <div className="button r" id="button-4">
         <input
           type="checkbox"
-          class="checkbox"
+          className="checkbox"
           name="switch"
           onChange={handleClick}
         />
-        <div class="knobs"></div>
-        <div class="layer"></div>
+        <div className="knobs"></div>
+        <div className="layer"></div>
       </div>
     </label>
     //   </div>

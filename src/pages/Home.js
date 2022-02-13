@@ -6,21 +6,28 @@ import { fetchData } from "../functions/fetchData";
 const Home = ({ search, sort }) => {
   const [data, setData] = useState([]);
   const [isLoading, setisLoading] = useState(true);
+  const [pageNumber, setPageNumber] = useState(1);
+  const limit = 5;
 
   useEffect(() => {
     fetchData(
-      `https://lereacteur-vinted-api.herokuapp.com/offers?title=${search}&sort=${sort}`,
+      `https://lereacteur-vinted-api.herokuapp.com/offers?title=${search}&sort=${sort}&page=${pageNumber}&limit=${limit}`,
       setData,
       setisLoading
     );
-  }, [search, sort]);
+  }, [search, sort, pageNumber]);
 
   return isLoading ? (
     <Loader />
   ) : (
     <div>
       <Hero />
-      <Content data={data} />
+      <Content
+        data={data}
+        setPageNumber={setPageNumber}
+        limit={limit}
+        pageNumber={pageNumber}
+      />
     </div>
   );
 };

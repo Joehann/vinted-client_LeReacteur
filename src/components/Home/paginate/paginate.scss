@@ -1,0 +1,23 @@
+.paginate {
+  margin: 25px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+
+  div {
+    height: 24px;
+    width: 24px;
+    background: #2eb1ba;
+    border: 2px solid #2eb1ba;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .active {
+    background: #ebedee;
+    color: #2eb1ba;
+  }
+}
