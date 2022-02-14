@@ -9,19 +9,29 @@ const Publish = ({ token }) => {
 
   useEffect(() => {
     const saveData = async () => {
+      const formData = new FormData();
+      formData.append("title", publish.title);
+      formData.append("description", publish.description);
+      formData.append("price", publish.price);
+      formData.append("condition", publish.condition);
+      formData.append("city", publish.city);
+      formData.append("brand", publish.brand);
+      formData.append("size", publish.size);
+      formData.append("color", publish.color);
+      formData.append("picture", publish.picture);
+
       try {
         if (publish.title) {
           const response = await axios.post(
             "https://lereacteur-vinted-api.herokuapp.com/offer/publish",
-            publish,
+            formData,
             {
               headers: {
-                authorization: `Bearer ${token}`,
-                // "Content-Type": "multipart/form-data",
+                Authorization: `Bearer ${token}`,
+                "Content-Type": "multipart/form-data",
               },
             }
           );
-          console.log("test");
           setPublish({});
           return response;
         }
