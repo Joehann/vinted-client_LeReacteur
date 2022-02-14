@@ -21,6 +21,12 @@ header {
       flex-direction: column;
       gap: 10px;
 
+      .two-filters {
+        display: flex;
+        align-items: center;
+        width: 100%;
+      }
+
       .header-search {
         position: relative;
         display: flex;

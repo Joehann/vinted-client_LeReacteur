@@ -6,7 +6,7 @@ import { useState } from "react";
 import SearchInput from "./SearchInput";
 import { removeToken } from "../../../functions/userToken";
 import Switch from "./Switch";
-// import Range from "./Range";
+// import TwoThumbs from "./TwoThumbs";
 
 const Header = ({ token, setToken, setSearch, search, setSort, sort }) => {
   const navigate = useNavigate();
@@ -31,8 +31,10 @@ const Header = ({ token, setToken, setSearch, search, setSort, sort }) => {
         </Link>
         <div className="filters">
           <SearchInput search={search} setSearch={setSearch} />
-          <Switch sort={sort} setSort={setSort} label="Trier par prix :" />
-          {/* <Range /> */}
+          <div className="two-filters">
+            <Switch sort={sort} setSort={setSort} label="Trier par prix :" />
+            {/* <TwoThumbs /> */}
+          </div>
         </div>
 
         {token ? (

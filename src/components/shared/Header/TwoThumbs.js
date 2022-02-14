@@ -1,3 +1,4 @@
+import "./two-thumbs.scss";
 import * as React from "react";
 import { Range, getTrackBackground } from "react-range";
 
@@ -30,7 +31,7 @@ const TwoThumbs = ({ rtl }) => {
             onTouchStart={props.onTouchStart}
             style={{
               ...props.style,
-              height: "36px",
+              height: "10px",
               display: "flex",
               width: "100%",
             }}
@@ -43,7 +44,7 @@ const TwoThumbs = ({ rtl }) => {
                 borderRadius: "4px",
                 background: getTrackBackground({
                   values,
-                  colors: ["#ccc", "#548BF4", "#ccc"],
+                  colors: ["#2cb1ba", "##2cb1ba", "#2cb1ba"],
                   min: MIN,
                   max: MAX,
                   rtl,
@@ -60,8 +61,8 @@ const TwoThumbs = ({ rtl }) => {
             {...props}
             style={{
               ...props.style,
-              height: "42px",
-              width: "42px",
+              height: "10px",
+              width: "10px",
               borderRadius: "4px",
               backgroundColor: "#FFF",
               display: "flex",
@@ -72,9 +73,9 @@ const TwoThumbs = ({ rtl }) => {
           >
             <div
               style={{
-                height: "16px",
+                height: "8px",
                 width: "5px",
-                backgroundColor: isDragged ? "#548BF4" : "#CCC",
+                backgroundColor: isDragged ? "#2cb1ba" : "#CCC",
               }}
             />
           </div>
