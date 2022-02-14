@@ -3,11 +3,19 @@ import { Link } from "react-router-dom";
 
 const OffersCard = ({ offer }) => {
   // console.log(offer);
+
   return (
     <Link to={`/offer/${offer._id}`}>
       <div className="offer-card">
         <div className="card-avatar">
-          <img src={offer.owner.account.avatar.secure_url} alt="" />
+          <img
+            src={
+              offer.owner.account.avatar
+                ? offer.owner.account.avatar.secure_url
+                : "https://api.iconify.design/ph:user-fill.svg?color=%23888888"
+            }
+            alt=""
+          />
           <span>{offer.owner.account.username}</span>
         </div>
         <div className="product-image">

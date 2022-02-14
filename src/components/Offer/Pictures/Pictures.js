@@ -1,8 +1,9 @@
 import "./pictures.scss";
 const ProductImages = ({ data }) => {
+  // console.log(data);
   return (
     <div className="product-images">
-      <img src={data.product_pictures[0].secure_url} alt="" />
+      <img src={data.product_image.secure_url} alt="" />
     </div>
   );
 };

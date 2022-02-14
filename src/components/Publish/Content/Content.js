@@ -1,11 +1,43 @@
 import "./content.scss";
-const Content = ({ publish, setPublish }) => {
+import { useState } from "react";
+const Content = ({ setPublish }) => {
+  const [picture, setPicture] = useState({});
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [brand, setBrand] = useState("");
+  const [size, setSize] = useState("");
+  const [color, setColor] = useState("");
+  const [condition, setCondition] = useState("");
+  const [city, setCity] = useState("");
+  const [price, setPrice] = useState("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const newObj = {};
+    newObj.title = title;
+    description.length > 0 && (newObj.description = description);
+    newObj.price = price;
+    condition.length > 0 && (newObj.condition = condition);
+    city.length > 0 && (newObj.city = city);
+    brand.length > 0 && (newObj.brand = brand);
+    size.length > 0 && (newObj.size = size);
+    color.length > 0 && (newObj.color = color);
+    newObj.picture = picture;
+
+    //set the state only if title, price and picture are defined
+    newObj.title && newObj.price && newObj.picture && setPublish(newObj);
+  };
+
   return (
     <div className="publish">
       <h2>Vends ton article</h2>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="block block-picture">
-          <input type="file" class="custom-file-input" />
+          <input
+            type="file"
+            className="custom-file-input"
+            onChange={(event) => setPicture(event.target.files[0])}
+          />
         </div>
         <div className="block block-article">
           <div className="input">
@@ -14,6 +46,9 @@ const Content = ({ publish, setPublish }) => {
               type="text"
               name="title"
               placeholder="ex: Chemise Sézane verte"
+              onChange={(event) => {
+                setTitle(event.target.value);
+              }}
             />
           </div>
           <div className="input">
@@ -21,39 +56,80 @@ const Content = ({ publish, setPublish }) => {
             <textarea
               name="description"
               placeholder="ex : porté quelquefois, taille correctement"
+              onChange={(event) => {
+                setDescription(event.target.value);
+              }}
             ></textarea>
           </div>
         </div>
         <div className="block block-details">
           <div className="input">
-            <label htmlFor="title">Marque</label>
-            <input type="text" name="title" placeholder="ex: Zara" />
-          </div>
-          <div className="input">
-            <label htmlFor="title">Taille</label>
-            <input type="text" name="title" placeholder="ex: ex L / 40 / 12" />
-          </div>
-          <div className="input">
-            <label htmlFor="title">Couleur</label>
-            <input type="text" name="title" placeholder="ex: Fushia" />
-          </div>
-          <div className="input">
-            <label htmlFor="title">Etat</label>
+            <label htmlFor="brand">Marque</label>
             <input
               type="text"
-              name="title"
-              placeholder="ex: Neuf avec étiquette"
+              name="brand"
+              placeholder="ex: Zara"
+              onChange={(event) => {
+                setBrand(event.target.value);
+              }}
             />
           </div>
           <div className="input">
-            <label htmlFor="title">Lieu</label>
-            <input type="text" name="title" placeholder="ex: Paris" />
+            <label htmlFor="size">Taille</label>
+            <input
+              type="text"
+              name="size"
+              placeholder="ex: ex L / 40 / 12"
+              onChange={(event) => {
+                setSize(event.target.value);
+              }}
+            />
+          </div>
+          <div className="input">
+            <label htmlFor="color">Couleur</label>
+            <input
+              type="text"
+              name="color"
+              placeholder="ex: Fushia"
+              onChange={(event) => {
+                setColor(event.target.value);
+              }}
+            />
+          </div>
+          <div className="input">
+            <label htmlFor="condition">Etat</label>
+            <input
+              type="text"
+              name="condition"
+              placeholder="ex: Neuf avec étiquette"
+              onChange={(event) => {
+                setCondition(event.target.value);
+              }}
+            />
+          </div>
+          <div className="input">
+            <label htmlFor="city">Lieu</label>
+            <input
+              type="text"
+              name="city"
+              placeholder="ex: Paris"
+              onChange={(event) => {
+                setCity(event.target.value);
+              }}
+            />
           </div>
         </div>
         <div className="block block-price">
           <div className="input">
-            <label htmlFor="title">Prix</label>
-            <input type="text" name="title" placeholder="0.00 €" />
+            <label htmlFor="price">Prix</label>
+            <input
+              type="text"
+              name="price"
+              placeholder="0.00 €"
+              onChange={(event) => {
+                setPrice(event.target.value);
+              }}
+            />
           </div>
         </div>
         <button type="submit" value="">

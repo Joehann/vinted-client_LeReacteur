@@ -23,7 +23,10 @@ const ProductDetails = ({ data }) => {
         <p className="name">{data.product_name}</p>
         <p className="description">{data.product_description}</p>
         <div className="product-offer-avatar">
-          <img src={data.owner.account.avatar.secure_url} alt="" />
+          {/* <img
+            src="https://api.iconify.design/ph:user-fill.svg?color=%23888888"
+            alt=""
+          /> */}
           <span>{data.owner.account.username}</span>
         </div>
       </div>
