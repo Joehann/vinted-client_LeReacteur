@@ -69,7 +69,9 @@ const Header = ({ token, setToken, setSearch, search, setSort, sort }) => {
             </button>
           </div>
         )}
-        <button className="sold-btn">Vends tes articles</button>
+        <Link to="/publish">
+          <button className="sold-btn">Vends tes articles</button>
+        </Link>
       </div>
     </header>
   );

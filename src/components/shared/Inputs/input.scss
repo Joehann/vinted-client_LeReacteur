@@ -1,4 +1,6 @@
-input:not([type="checkbox"]) {
+input:not([type="checkbox"]),
+input:not([type="file"]),
+textarea {
   border: none;
   border-bottom: 1px solid #fcced3;
   height: 35px;

@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Offer from "./pages/Offer";
 import NotFound from "./pages/NotFound";
 import Header from "./components/shared/Header/Header";
+import Publish from "./pages/Publish";
 import { useState } from "react";
 import Cookies from "js-cookie";
 
@@ -29,6 +30,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home search={search} sort={sort} />}></Route>
         <Route path="/offer/:id" element={<Offer />}></Route>
+        <Route path="/publish" element={<Publish token={token} />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
     </Router>
