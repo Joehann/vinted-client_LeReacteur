@@ -17,7 +17,7 @@ const Paginate = ({ data, setPageNumber, limit, pageNumber }) => {
     <div className="paginate">
       {pages.map((item, index) => {
         return (
-          <div
+          <button
             key={index}
             //Add the class "active" on the current page number
             className={index + 1 === pageNumber ? "active" : ""}
@@ -26,7 +26,7 @@ const Paginate = ({ data, setPageNumber, limit, pageNumber }) => {
             }}
           >
             {item}
-          </div>
+          </button>
         );
       })}
     </div>
