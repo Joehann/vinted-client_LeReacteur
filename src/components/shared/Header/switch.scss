@@ -51,8 +51,8 @@ label {
   z-index: 1;
 }
 
-#button-4 .knobs:before,
-#button-4 .knobs:after {
+#button-switch .knobs:before,
+#button-switch .knobs:after {
   position: absolute;
   top: 3px;
   left: 5px;
@@ -69,29 +69,29 @@ label {
   transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
 }
 
-#button-4 .knobs:before {
+#button-switch .knobs:before {
   content: "↑";
 }
 
-#button-4 .knobs:after {
+#button-switch .knobs:after {
   content: "↓";
 }
 
-#button-4 .knobs:after {
+#button-switch .knobs:after {
   top: -25px;
   right: 2px;
   left: auto;
   background-color: #2cb1ba;
 }
 
-#button-4 .checkbox:checked + .knobs:before {
+#button-switch .checkbox:checked + .knobs:before {
   top: -25px;
 }
 
-#button-4 .checkbox:checked + .knobs:after {
+#button-switch .checkbox:checked + .knobs:after {
   top: 2px;
 }
 
-#button-4 .checkbox:checked ~ .layer {
+#button-switch .checkbox:checked ~ .layer {
   background-color: #f5f6f7;
 }

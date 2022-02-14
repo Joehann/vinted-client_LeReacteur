@@ -11,7 +11,7 @@ const Switch = ({ setSort, sort, label }) => {
     // Switch button for sort the results of the items research
     <label htmlFor="switch">
       {label}
-      <div className="button r" id="button-4">
+      <div className="button r" id="button-switch">
         <input
           type="checkbox"
           className="checkbox"
