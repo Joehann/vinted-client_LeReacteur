@@ -10,6 +10,11 @@ const Content = ({ setPublish }) => {
   const [condition, setCondition] = useState("");
   const [city, setCity] = useState("");
   const [price, setPrice] = useState("");
+  let src = "";
+  if (picture.name) {
+    src = URL.createObjectURL(picture);
+    console.log(src);
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -33,11 +38,15 @@ const Content = ({ setPublish }) => {
       <h2>Vends ton article</h2>
       <form onSubmit={handleSubmit}>
         <div className="block block-picture">
-          <input
-            type="file"
-            className="custom-file-input"
-            onChange={(event) => setPicture(event.target.files[0])}
-          />
+          {!picture.name ? (
+            <input
+              type="file"
+              className="custom-file-input"
+              onChange={(event) => setPicture(event.target.files[0])}
+            />
+          ) : (
+            <img src={src} alt="" />
+          )}
         </div>
         <div className="block block-article">
           <div className="input">

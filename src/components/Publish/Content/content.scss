@@ -44,6 +44,12 @@
     .block-picture {
       position: relative;
       height: 200px;
+
+      img {
+        object-fit: contain;
+        max-height: 100%;
+        max-width: 100%;
+      }
     }
 
     .custom-file-input {
