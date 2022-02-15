@@ -2,7 +2,6 @@ import "./header.scss";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../../assets/img/logo.svg";
 import Modal from "../Modals/Modal";
-import { useState } from "react";
 import SearchInput from "./SearchInput";
 import { removeToken } from "../../../functions/userToken";
 import Switch from "./Switch";

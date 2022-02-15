@@ -1,11 +1,12 @@
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Content from "../components/Publish/Content/Content";
 import axios from "axios";
 
 const Publish = ({ token, setToggleModal, setModalName }) => {
   const [publish, setPublish] = useState({});
-  console.log(publish);
+  const navigate = useNavigate();
+  // console.log(publish);
 
   useEffect(() => {
     const saveData = async () => {
@@ -32,15 +33,16 @@ const Publish = ({ token, setToggleModal, setModalName }) => {
               },
             }
           );
-          setPublish({});
-          return response;
+          if (response.data.id) {
+            navigate(`/offer/${response.data.id}`);
+          }
         }
       } catch (error) {
         console.log(error.message);
       }
     };
     saveData();
-  }, [publish, token]);
+  }, [publish, token, navigate]);
 
   return token ? (
     <div>
