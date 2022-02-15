@@ -10,6 +10,7 @@ const Content = ({ setPublish }) => {
   const [condition, setCondition] = useState("");
   const [city, setCity] = useState("");
   const [price, setPrice] = useState("");
+
   let src = "";
   if (picture.name) {
     src = URL.createObjectURL(picture);

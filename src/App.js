@@ -15,6 +15,10 @@ function App() {
   const [search, setSearch] = useState("");
   //State to manage sort switch button (ASC/DESC)
   const [sort, setSort] = useState("price-asc");
+  //State to hide/show modals with overlay
+  const [toggleModal, setToggleModal] = useState("hidden");
+  //State to choose the content of a modal
+  const [modalName, setModalName] = useState("");
 
   return (
     <Router>
@@ -25,12 +29,25 @@ function App() {
         sort={sort}
         token={token}
         setToken={setToken}
+        setToggleModal={setToggleModal}
+        setModalName={setModalName}
+        toggleModal={toggleModal}
+        modalName={modalName}
       />
 
       <Routes>
         <Route path="/" element={<Home search={search} sort={sort} />}></Route>
         <Route path="/offer/:id" element={<Offer />}></Route>
-        <Route path="/publish" element={<Publish token={token} />}></Route>
+        <Route
+          path="/publish"
+          element={
+            <Publish
+              token={token}
+              setToggleModal={setToggleModal}
+              setModalName={setModalName}
+            />
+          }
+        ></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
     </Router>

@@ -8,10 +8,21 @@ import { removeToken } from "../../../functions/userToken";
 import Switch from "./Switch";
 // import TwoThumbs from "./TwoThumbs";
 
-const Header = ({ token, setToken, setSearch, search, setSort, sort }) => {
+const Header = ({
+  token,
+  setToken,
+  setSearch,
+  search,
+  setSort,
+  sort,
+  setToggleModal,
+  toggleModal,
+  setModalName,
+  modalName,
+}) => {
   const navigate = useNavigate();
-  const [toggleModal, setToggleModal] = useState("hidden");
-  const [modalName, setModalName] = useState("");
+  // const [toggleModal, setToggleModal] = useState("hidden");
+  // const [modalName, setModalName] = useState("");
 
   return (
     <header>

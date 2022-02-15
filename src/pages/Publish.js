@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Content from "../components/Publish/Content/Content";
 import axios from "axios";
 
-const Publish = ({ token }) => {
+const Publish = ({ token, setToggleModal, setModalName }) => {
   const [publish, setPublish] = useState({});
   console.log(publish);
 
@@ -47,7 +47,11 @@ const Publish = ({ token }) => {
       <Content setPublish={setPublish} />
     </div>
   ) : (
-    <Navigate to="/" />
+    <Navigate
+      to="/"
+      modalName={setModalName("login")}
+      toggleModal={setToggleModal("show")}
+    />
   );
 };
 
