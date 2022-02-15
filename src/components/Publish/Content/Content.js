@@ -1,5 +1,6 @@
 import "./content.scss";
 import { useState } from "react";
+import Cross from "../../../assets/img/cross.svg";
 const Content = ({ setPublish }) => {
   const [picture, setPicture] = useState({});
   const [title, setTitle] = useState("");
@@ -34,6 +35,9 @@ const Content = ({ setPublish }) => {
     newObj.title && newObj.price && newObj.picture && setPublish(newObj);
   };
 
+  const removeImage = () => {
+    setPicture({});
+  };
   return (
     <div className="publish">
       <h2>Vends ton article</h2>
@@ -46,7 +50,12 @@ const Content = ({ setPublish }) => {
               onChange={(event) => setPicture(event.target.files[0])}
             />
           ) : (
-            <img src={src} alt="" />
+            <div className="preview">
+              <img src={src} alt="" />
+              <div className="cross">
+                <img src={Cross} alt="" onClick={removeImage} />
+              </div>
+            </div>
           )}
         </div>
         <div className="block block-article">

@@ -47,7 +47,7 @@ const Login = ({ setToken, setToggleModal }) => {
         <Input input={emailInput} setInput={setEmailInput} />
         <Input input={passwordInput} setInput={setPasswordInput} />
 
-        <button type="submit">S'inscrire</button>
+        <button type="submit">Se connecter</button>
       </form>
     </div>
   );
