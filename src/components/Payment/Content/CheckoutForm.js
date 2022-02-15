@@ -63,27 +63,32 @@ const CheckoutForm = ({ product_name, product_price }) => {
         </div>
       </div>
       <div className="divider"></div>
-      <div className="total">
-        <div className="line">
-          <p>Total</p>
-          <p>{totalPrice} €</p>
-        </div>
-        <div className="text">
-          <p>
-            Il ne vous reste plus qu'une étape pour vous offir{" "}
-            <span>{product_name}</span>. Vous allez payer{" "}
-            <span>{totalPrice} €</span> (frais de protection et de port inclus).
-          </p>
-        </div>
-      </div>
-
       {!completed ? (
-        <form onSubmit={handleSubmit}>
-          <CardElement />
-          <button type="submit">Valider</button>
-        </form>
+        <div>
+          <div className="total">
+            <div className="line">
+              <p>Total</p>
+              <p>{totalPrice} €</p>
+            </div>
+            <div className="text">
+              <p>
+                Il ne vous reste plus qu'une étape pour vous offir{" "}
+                <span>{product_name}</span>. Vous allez payer{" "}
+                <span>{totalPrice} €</span> (frais de protection et de port
+                inclus).
+              </p>
+            </div>
+          </div>
+
+          <form onSubmit={handleSubmit}>
+            <CardElement />
+            <button type="submit">Valider</button>
+          </form>
+        </div>
       ) : (
-        <span>Paiement effectué ! </span>
+        <div className="completed">
+          <p>Paiement effectué !</p>
+        </div>
       )}
     </div>
   );
