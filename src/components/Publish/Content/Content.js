@@ -14,7 +14,7 @@ const Content = ({ setPublish }) => {
   let src = "";
   if (picture.name) {
     src = URL.createObjectURL(picture);
-    console.log(src);
+    // console.log(src);
   }
 
   const handleSubmit = (event) => {

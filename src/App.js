@@ -5,6 +5,7 @@ import Offer from "./pages/Offer";
 import NotFound from "./pages/NotFound";
 import Header from "./components/shared/Header/Header";
 import Publish from "./pages/Publish";
+import Payment from "./pages/Payment";
 import { useState } from "react";
 import Cookies from "js-cookie";
 
@@ -42,6 +43,16 @@ function App() {
           path="/publish"
           element={
             <Publish
+              token={token}
+              setToggleModal={setToggleModal}
+              setModalName={setModalName}
+            />
+          }
+        ></Route>
+        <Route
+          path="/payment"
+          element={
+            <Payment
               token={token}
               setToggleModal={setToggleModal}
               setModalName={setModalName}

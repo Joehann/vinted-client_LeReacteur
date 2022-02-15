@@ -1,0 +1,63 @@
+.payment-checkout {
+  width: 500px;
+  padding: 15px;
+  margin: 30px auto;
+  background: #fff;
+
+  .resume {
+    color: #bbb;
+    font-weight: 300;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .line {
+    display: flex;
+    justify-content: space-between;
+    color: #999;
+    margin: 5px 0;
+    font-weight: 300;
+  }
+
+  .divider {
+    height: 1px;
+    width: 100%;
+    background: #ddd;
+    margin: 40px 0;
+  }
+
+  .total {
+    .line {
+      color: #555;
+      font-weight: 400;
+    }
+
+    .text {
+      margin: 50px 0 20px;
+      font-size: 14px;
+      font-weight: 300;
+      text-align: justify;
+      color: #999;
+
+      span {
+        color: #555;
+        font-weight: 400;
+      }
+    }
+  }
+
+  form {
+    margin-top: 50px;
+    border: #ddd 1px solid;
+    padding: 8px;
+    button {
+      margin: 40px 0 20px;
+      padding: 10px;
+      width: 100%;
+      background: rgb(25, 185, 78);
+      color: #fff;
+      border: rgb(25, 185, 78);
+      border-radius: 8px;
+    }
+  }
+}

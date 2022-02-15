@@ -1,4 +1,5 @@
 import "./detail.scss";
+import { Link } from "react-router-dom";
 
 const ProductDetails = ({ data }) => {
   return (
@@ -30,7 +31,15 @@ const ProductDetails = ({ data }) => {
           <span>{data.owner.account.username}</span>
         </div>
       </div>
-      <button>ACHETER</button>
+      <Link
+        to="/payment"
+        state={{
+          product_name: data.product_name,
+          product_price: data.product_price,
+        }}
+      >
+        <button>ACHETER</button>
+      </Link>
     </div>
   );
 };
