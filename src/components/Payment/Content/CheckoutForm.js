@@ -6,10 +6,8 @@ import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import axios from "axios";
 
 const CheckoutForm = ({ product_name, product_price }) => {
-  const totalPrice = (
-    Math.floor((product_price + 0.8 + 0.4) * 100) / 100
-  ).toFixed(2);
-  console.log(totalPrice);
+  const totalPrice = (product_price + 0.8 + 0.4).toFixed(2);
+  console.log(totalPrice * 100);
 
   // console.log("Content ===> ", product_name, product_price);
   const stripe = useStripe();
@@ -53,7 +51,7 @@ const CheckoutForm = ({ product_name, product_price }) => {
       <div className="prices">
         <div className="line">
           <p>Commande</p>
-          <p>{product_price.toFixed(2)} €</p>
+          <p>{product_price} €</p>
         </div>
         <div className="line">
           <p>Frais de protection acheteurs</p>
