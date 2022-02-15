@@ -16,6 +16,11 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transition: transform 0.05s ease-in-out;
+  }
+
+  li:hover {
+    transform: scale(1.1);
   }
   .active {
     background: #ebedee;

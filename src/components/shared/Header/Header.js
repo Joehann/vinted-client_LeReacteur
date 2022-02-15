@@ -77,6 +77,7 @@ const Header = ({
             </button>
 
             <button
+              className="login-btn"
               onClick={() => {
                 setModalName("login");
                 setToggleModal("show");
