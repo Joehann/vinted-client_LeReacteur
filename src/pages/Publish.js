@@ -33,8 +33,8 @@ const Publish = ({ token, setToggleModal, setModalName }) => {
               },
             }
           );
-          if (response.data.id) {
-            navigate(`/offer/${response.data.id}`);
+          if (response.data._id) {
+            navigate(`/offer/${response.data._id}`);
           }
         }
       } catch (error) {
