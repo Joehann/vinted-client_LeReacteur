@@ -1,3 +1,4 @@
+import reactDom from "react-dom";
 import { Range, getTrackBackground } from "react-range";
 
 const MIN = 0;
@@ -17,9 +18,12 @@ const TwoThumbs = ({ setRangeValues, rangeValues }) => {
         <div
           style={{
             ...props.style,
-            height: "36px",
+            height: "40px",
+
             display: "flex",
-            width: "50%",
+            width: "63%",
+            paddingTop: "18px",
+            boxSizing: "border-box",
           }}
         >
           <div
