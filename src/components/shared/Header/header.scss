@@ -104,6 +104,11 @@ header {
       outline: none;
       background: #2cb1ba;
       color: #fff;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background: #2d8b92;
+      }
     }
   }
 }
