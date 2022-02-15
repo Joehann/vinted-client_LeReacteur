@@ -7,7 +7,7 @@ header {
   z-index: 1000;
 
   .container {
-    height: 45px;
+    height: 75px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -23,8 +23,11 @@ header {
 
       .two-filters {
         display: flex;
-        align-items: center;
+        align-items: flex-end;
+        // justify-content: space-between;
+        gap: 50px;
         width: 100%;
+        margin-top: 10px;
       }
 
       .header-search {

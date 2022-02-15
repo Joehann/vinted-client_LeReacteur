@@ -5,7 +5,7 @@ import Modal from "../Modals/Modal";
 import SearchInput from "./SearchInput";
 import { removeToken } from "../../../functions/userToken";
 import Switch from "./Switch";
-// import TwoThumbs from "./TwoThumbs";
+import TwoThumbs from "./TwoThumbs";
 
 const Header = ({
   token,
@@ -18,6 +18,8 @@ const Header = ({
   toggleModal,
   setModalName,
   modalName,
+  setRangeValues,
+  rangeValues,
 }) => {
   const navigate = useNavigate();
   // const [toggleModal, setToggleModal] = useState("hidden");
@@ -43,7 +45,10 @@ const Header = ({
           <SearchInput search={search} setSearch={setSearch} />
           <div className="two-filters">
             <Switch sort={sort} setSort={setSort} label="Trier par prix :" />
-            {/* <TwoThumbs /> */}
+            <TwoThumbs
+              setRangeValues={setRangeValues}
+              rangeValues={rangeValues}
+            />
           </div>
         </div>
 

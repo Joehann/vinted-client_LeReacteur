@@ -1,90 +1,79 @@
-import "./two-thumbs.scss";
-import * as React from "react";
 import { Range, getTrackBackground } from "react-range";
 
-const STEP = 0.1;
 const MIN = 0;
-const MAX = 100;
+const MAX = 10000;
 
-const TwoThumbs = ({ rtl }) => {
-  const [values, setValues] = React.useState([25, 75]);
+const TwoThumbs = ({ setRangeValues, rangeValues }) => {
+  // console.log(rangeValues);
+
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        flexWrap: "wrap",
-      }}
-    >
-      <Range
-        values={values}
-        step={STEP}
-        min={MIN}
-        max={MAX}
-        rtl={rtl}
-        onChange={(values) => {
-          setValues(values);
-        }}
-        renderTrack={({ props, children }) => (
+    <Range
+      step={5}
+      min={MIN}
+      max={MAX}
+      values={rangeValues}
+      onChange={(values) => setRangeValues(values)}
+      renderTrack={({ props, children }) => (
+        <div
+          style={{
+            ...props.style,
+            height: "36px",
+            display: "flex",
+            width: "50%",
+          }}
+        >
           <div
-            onMouseDown={props.onMouseDown}
-            onTouchStart={props.onTouchStart}
+            ref={props.ref}
             style={{
-              ...props.style,
-              height: "10px",
-              display: "flex",
+              height: "5px",
               width: "100%",
-            }}
-          >
-            <div
-              ref={props.ref}
-              style={{
-                height: "5px",
-                width: "100%",
-                borderRadius: "4px",
-                background: getTrackBackground({
-                  values,
-                  colors: ["#2cb1ba", "##2cb1ba", "#2cb1ba"],
-                  min: MIN,
-                  max: MAX,
-                  rtl,
-                }),
-                alignSelf: "center",
-              }}
-            >
-              {children}
-            </div>
-          </div>
-        )}
-        renderThumb={({ props, isDragged }) => (
-          <div
-            {...props}
-            style={{
-              ...props.style,
-              height: "10px",
-              width: "10px",
               borderRadius: "4px",
-              backgroundColor: "#FFF",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              boxShadow: "0px 2px 6px #AAA",
+              background: getTrackBackground({
+                values: rangeValues,
+                colors: ["#ccc", " #2cb1ba", "#ccc"],
+                min: MIN,
+                max: MAX,
+              }),
+              alignSelf: "center",
             }}
           >
-            <div
-              style={{
-                height: "8px",
-                width: "5px",
-                backgroundColor: isDragged ? "#2cb1ba" : "#CCC",
-              }}
-            />
+            {children}
           </div>
-        )}
-      />
-      <output style={{ marginTop: "30px" }} id="output">
-        {values[0].toFixed(1)} - {values[1].toFixed(1)}
-      </output>
-    </div>
+        </div>
+      )}
+      renderThumb={({ index, props, isDragged }) => (
+        <div
+          {...props}
+          style={{
+            ...props.style,
+            height: "15px",
+            width: "15px",
+            borderRadius: "50%",
+            border: isDragged ? "" : "1px solid white",
+            backgroundColor: "#2cb1ba",
+            outline: "none",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <div
+            style={{
+              position: "absolute",
+              top: "-28px",
+              color: "#fff",
+              fontSize: "12px",
+              fontFamily: "Maison Neue",
+              padding: "4px",
+              borderRadius: "4px",
+              backgroundColor: "#2cb1ba",
+            }}
+          >
+            {rangeValues[index]}€
+          </div>
+        </div>
+      )}
+    />
   );
 };
 

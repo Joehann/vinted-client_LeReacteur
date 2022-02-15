@@ -20,6 +20,9 @@ function App() {
   const [toggleModal, setToggleModal] = useState("hidden");
   //State to choose the content of a modal
   const [modalName, setModalName] = useState("");
+  //State of Range values in the header
+  const [rangeValues, setRangeValues] = useState([0, 1000]);
+  // console.log(rangeValues);
 
   return (
     <Router>
@@ -34,10 +37,17 @@ function App() {
         setModalName={setModalName}
         toggleModal={toggleModal}
         modalName={modalName}
+        setRangeValues={setRangeValues}
+        rangeValues={rangeValues}
       />
 
       <Routes>
-        <Route path="/" element={<Home search={search} sort={sort} />}></Route>
+        <Route
+          path="/"
+          element={
+            <Home search={search} sort={sort} rangeValues={rangeValues} />
+          }
+        ></Route>
         <Route path="/offer/:id" element={<Offer />}></Route>
         <Route
           path="/publish"
