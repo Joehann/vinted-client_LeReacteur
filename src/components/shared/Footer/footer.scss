@@ -6,4 +6,9 @@
   justify-content: space-between;
   align-items: center;
   color: #fff;
+
+  .right {
+    display: flex;
+    gap: 15px;
+  }
 }
