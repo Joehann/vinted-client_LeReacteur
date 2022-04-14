@@ -8,6 +8,7 @@ import Publish from "./pages/Publish";
 import Payment from "./pages/Payment";
 import { useState } from "react";
 import Cookies from "js-cookie";
+import Footer from "./components/shared/Footer/Footer";
 
 function App() {
   //State to manage token
@@ -71,6 +72,7 @@ function App() {
         ></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
+      <Footer />
     </Router>
   );
 }
